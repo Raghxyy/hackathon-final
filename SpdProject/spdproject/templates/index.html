@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>
+        {% block 'title' %}
+        Main Home
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+<h3 align="center">ASTROLOGY MANAGEMENT SYSTEM</h3>
+<hr><hr>
+<style >
+body, html {
+  height: 100%;
+}
+body {
+  background-image: url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D");
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+    nav {
+  background-color: #333; /* change the background color to your desired color */
+  overflow: hidden;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ddd; /* change the hover background color to your desired color */
+  color: black;
+}
+
+</style>
+<nav>
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;</li>
+        <li><a href="{% url 'registration' %}">Registration</a>&nbsp;
+</li>
+        <li><a href="{% url 'userlogin' %}">Login</a>&nbsp;</li>
+    </ul>
+</nav>
+<hr><hr>
+<marquee direction="right" behavior="alternate" style="background:lightgreen;" >
+LOGIN TO GET IN TO WEB SITE
+</marquee>
+<hr><hr>
+<h1>People Needs Astrological Solutions! Are you online to help them?</h1>
+<h2> <br>Having Astrological knowledge is the next level of skills that not everyone posses.<br>
+    And, if you’re a true professional in the same, nothing seems better than that!,<br>
+    But, what if you are not able to utilize your skills for the betterment of people and project yourself as a pro<br>
+    you must think about it..</h2>
+<br>
+<br>
+<script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings =
+            {"appId":"3e4e9555fd5a1839d4cb3e4006b39ad4a","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+</body>
+</html>

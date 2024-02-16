@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Horoscope</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+
+
+	</head>
+	<body>
+    <style>
+        /******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body{
+  text-align: center;
+  background: red;
+  color: green;
+}
+
+.birthday{
+text-decoration-color: gray;
+}
+
+.sign{
+  display: none;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+    </style>
+    <hr><hr>
+<style >
+body, html {
+  height: 100%;
+}
+body {
+  background-image: url("https://static.tnn.in/thumb/msid-96387097,width-1280,height-720,resizemode-75/96387097.jpg");
+  background-image: url("https://static.tnn.in/thumb/msid-96387097,width-1280,height-720,resizemode-75/96387097.jpg");
+  background-image: url("https://static.tnn.in/thumb/msid-96387097,width-1280,height-720,resizemode-75/96387097.jpg");
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+    nav {
+  background-color: #333; /* change the background color to your desired color */
+  overflow: hidden;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ddd; /* change the hover background color to your desired color */
+  color: black;
+}
+
+</style>
+
+<h3 align="center">ZODIACSIGN</h3>
+<hr><hr>
+<nav>
+    <ul>
+        <li><a href="{% url 'userhome' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        <li><a href="{% url 'checksign' %}">Check sign</a>&nbsp;&nbsp;</li>
+</li>
+
+        <li><a href="{% url 'zodiacsign' %}">Horoscope</a>&nbsp;&nbsp;</li>
+        <li><a href="{% url 'userlogout' %}">Logout</a>&nbsp;&nbsp;</li>
+
+         </ul>
+</nav>
+<br><br>
+		<h1 style="color:black;" >2023 Horoscope</h1>
+		<h2 style="color:black;" >Enter your birthday below</h2>
+
+		<select id="month"class="" name="month">
+			<option value="Jan">January</option>
+			<option value="Feb">February</option>
+			<option value="Mar">March</option>
+			<option value="Apr">April</option>
+			<option value="May">May</option>
+			<option value="Jun">June</option>
+			<option value="Jul">July</option>
+			<option value="Aug">August</option>
+			<option value="Sep">September</option>
+			<option value="Oct">October</option>
+			<option value="Nov">November</option>
+			<option value="Dec">December</option>
+		</select>
+
+		<select id="day"class="" name="day">
+			<option value="01">01</option>
+			<option value="01">02</option>
+			<option value="01">03</option>
+			<option value="01">04</option>
+			<option value="01">05</option>
+			<option value="01">06</option>
+			<option value="01">07</option>
+			<option value="01">08</option>
+			<option value="01">09</option>
+			<option value="01">10</option>
+			<option value="01">11</option>
+			<option value="01">12</option>
+			<option value="01">13</option>
+			<option value="01">14</option>
+			<option value="01">15</option>
+			<option value="01">16</option>
+			<option value="01">17</option>
+			<option value="01">18</option>
+			<option value="01">19</option>
+			<option value="01">20</option>
+			<option value="01">21</option>
+			<option value="01">22</option>
+			<option value="01">23</option>
+			<option value="01">24</option>
+			<option value="01">25</option>
+			<option value="01">26</option>
+			<option value="01">27</option>
+			<option value="01">28</option>
+			<option value="01">29</option>
+			<option value="01">30</option>
+			<option value="01">31</option>
+		</select>
+
+		<button id="check"type="button" name="button">Submit</button>
+
+
+		<div class="sign" id="capricorn">
+			<h1 align="center" style="color:white;">Hello, dear Capricorn. Pay attention, because you're going to like what you read. After the hellscape that was 2020, this year puts your career and money center stage. In particular, you will benefit from leaning into what you love and whatever it is that brings you the most satisfaction. While we all must take what we can get in this economy, this year asks you to take risks and reap the financial rewards.</h1>
+		</div>
+
+		<div class="sign" id="aquarius">
+			<h1 align="center" style="color:white;">You care about your community, Aquarius, and the events of 2020 gave you plenty of chances to keep busy by lending a hand. Whether you became your family's point person and organizer of Zoom holidays or dove into activism, you likely stayed so busy tending to others that you forgot about your own needs. Now, 2021 shines a spotlight on you, precious water bearer, and it's time to step into it.</h1>
+		</div>
+
+		<div class="sign" id="pisces">
+			<h1 align="center" style="color:white;">Your psychic and empathic abilities are what make you so magical, Pisces, but the weight of the world in 2020 became too much for you. As a result, you probably used stay-at-home orders to retreat a little bit too much. This year asks you to come out of your fishbowl and grace us with your humor and pretty face. Expect major changes in your friend group that overlap with your love life. Are you secretly in love with your best friend?</h1>
+		</div>
+
+		<div class="sign" id="aries">
+			<h1 align="center" style="color:white;">2021 is major for your love life Aries, but only if you drop the drama. As the world starts to heal from the pains of 2020, you need to let go of any habits that may have developed while isolating that no longer serve you. This year brings opportunities for magnificent love, as long as you don't ruin it with an infamous Aries temper tantrum.</h1>
+		</div>
+
+		<div class="sign" id="taurus">
+			<h1 align="center" style="color:white;">Last year left you with plenty of time to think, Taurus, and 2021 wants you to act on your desires because you are worth it. This will likely manifest most obviously in your professional life, so don't be surprised if you leave one job for something bigger and better that fills your soul. Practice self-care and don't for a second forget your worth, or else you could risk missing out on an opportunity made for you.</h1>
+		</div>
+
+		<div class="sign" id="gemini">
+			<h1 align="center" style="color:white;">Have you ever been so busy that you wished you could clone yourself just to get everything done? That’s the Gemini experience in a nutshell. Appropriately symbolized by the celestial twins, this air sign was interested in so many pursuits that it had to double itself.</h1>
+		</div>
+
+		<div class="sign" id="cancer">
+			<h1 align="center" style="color:white;">2020 kept you so busy that you started crab-walking in circles, Cancer. You're an expert when it comes to taking care of other people, but 2021 asks you to let other people take care of you. This may be hard to do, as it can be difficult to admit when you're vulnerable, but I pinkie promise that it's for your own health and happiness.</h1>
+		</div>
+
+		<div class="sign" id="leo">
+			<h1 align="center" style="color:white;">You are ruled by the sun, Leo, so you were actually born to be in the spotlight. Social distancing was hard for everyone, but it's possible it affected your sign the most, leaving you to get creative. As the world starts to heal in 2021, you'll feel like a lion trapped in a cage bursting to get out. When you do, you'll want to say yes to every date and every opportunity, but beware of short-term thinking, Leo. Your 2021 mission is to practice patience and be discerning.</h1>
+		</div>
+
+		<div class="sign" id="virgo">
+			<h1 align="center" style="color:white;">As the healer of the zodiac, 2020 kept you busy, Virgo. When you weren't out there giving out masks and delivering meals you became an emotional net for friends and family, and it's likely you over-extended yourself. This year, it may be helpful to work through the trauma you've experienced, either by getting a therapist, meditating, or simply making more time for long walks. Doing things that make you feel calm and balanced may just help you erect boundaries to bring in healthier relationships. </h1>
+		</div>
+
+		<div class="sign" id="libra">
+			<h1 align="center" style="color:white;">As the sign of partnerships and balance, 2020 did a number on you. Not only was the world total chaos, but you had to primarily switch to flirting via sext, which while fun, is not the same as batting your eyelashes in real life. However, you still managed to get your fair share of attention. This year offers a chance at healthy, stable, and long-term love, you just need to keep your eyes and heart open.</h1>
+		</div>
+
+		<div class="sign" id="scorpio">
+			<h1 align="center" style="color:white;">As the sign of partnerships and balance, 2020 did a number on you. Not only was the world total chaos, but you had to primarily switch to flirting via sext, which while fun, is not the same as batting your eyelashes in real life. However, you still managed to get your fair share of attention. This year offers a chance at healthy, stable, and long-term love, you just need to keep your eyes and heart open.</h1>
+		</div>
+
+		<div class="sign" id="sagittarius">
+			<h1 align="center" style="color:white;">Last year was rough on everyone, Sagittarius, but you felt it super hard. As a fire sign who loves to be the life of the party, when parties were canceled, you may have wondered what the point of it all was — and given into doom-scrolling as a substitute. This year, you'll find purpose again. 2021 asks you to prioritize your health, both mental and emotional. You'll feel much better when you start listening and tending to your needs.</h1>
+		</div>
+
+		<script type="text/javascript" src="static/js/main.js"></script>
+	</body>
+</html>
