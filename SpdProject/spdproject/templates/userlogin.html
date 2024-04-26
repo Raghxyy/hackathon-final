@@ -25,7 +25,7 @@
         form {
             width: 400px;
             margin: 0 auto;
-            border: 1px solid #ccc;
+            border: 1px solid #2ADE8A;
             padding: 20px;
             border-radius: 5px;
         }
@@ -54,16 +54,13 @@ body, html {
   height: 100%;
 }
 body {
-  background-image: url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D");
-    height: 100%;
-
-  /* Center and scale the image nicely */
+  background-image: url("https://www.zodiacsign.com/images/believe-in-astrology.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
  nav {
-  background-color: #333; /* change the background color to your desired color */
+  background-color: #222; /* change the background color to your desired color */
   overflow: hidden;
 }
 
@@ -91,10 +88,27 @@ nav a:hover {
   background-color: #ddd; /* change the hover background color to your desired color */
   color: black;
 }
+    footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+
+
 
 </style>
-<h3 align="center">ASTROLOGY MANAGEMENT SYSTEM</h3>
-<hr><hr>
+<h3 style="color:#FEE190; " align="center">ASTROLOGY MANAGEMENT SYSTEM</h3>
+
 <nav>
     <ul>
         <li><a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;</li>
@@ -104,7 +118,7 @@ nav a:hover {
     </ul>
 </nav>
 
-<h1 align="center">LOGIN WITH YOUR DETAILS</h1>
+<h1 style="color:#FEE190; " align="center">𝓛𝓸𝓰𝓲𝓷 𝓦𝓲𝓽𝓱 𝓨𝓸𝓾𝓻 𝓓𝓮𝓽𝓪𝓲𝓵𝓼 </h1>
 
 <h3 align="center"><mark>{{msg}}</mark></h3>
 
@@ -113,14 +127,14 @@ nav a:hover {
 <table align=center>
 
 <tr>
-<td><label>Email ID</label></td>
+<td><label style="color: #FEE190;" >Email ID</label></td>
 <td><input type="email" name="emailid"  required="required"/></td>
 </tr>
 
 <tr><td></td></tr>
 
 <tr>
-<td><label>Password</label></td>
+<td><label style="color: #FEE190;">Password</label></td>
 <td><input type="password" name="password" required="required"/></td>
 </tr>
 
@@ -137,6 +151,10 @@ nav a:hover {
 </table>
 
 </form>
+
+<footer>
+    <p>&copy; 2024 Developed By Raghu </p>
+</footer>
 
 
 

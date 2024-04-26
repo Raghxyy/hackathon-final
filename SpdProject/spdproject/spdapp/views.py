@@ -1,8 +1,6 @@
 from  django.db.models import Q
 from django.http import HttpResponse
-from django.shortcuts import render
-
-# Create your views here.
+from django.shortcuts import render, get_object_or_404, redirect
 from django.shortcuts import render
 
 from .forms import RegistrationForm
@@ -46,7 +44,39 @@ def userlogout(request):
     return render(request,"userlogin.html")
 def newproject(request):
     return render(request,"zodiacsign.html")
-def sparepart(request):
-    return render(request,"Spateparts.html")
+
 def checksign(request):
     return render(request,"checksign.html")
+
+def create_registration(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('registration_list')  # Redirect to the list of registrations
+    else:
+        form = RegistrationForm()
+    return render(request, 'create_registration.html', {'form': form})
+
+def registration_list(request):
+    registrations = Registration.objects.all()
+    return render(request, 'registration_list.html', {'registrations': registrations})
+
+def update_registration(request, pk):
+    registration = Registration.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST, instance=registration)
+        if form.is_valid():
+            form.save()
+            return redirect('registration_list')  # Redirect to the list of registrations
+    else:
+        form = RegistrationForm(instance=registration)
+    return render(request, 'update_registration.html', {'form': form})
+
+def delete_registration(request, pk):
+    registration = Registration.objects.get(pk=pk)
+    if request.method == 'POST':
+        registration.delete()
+        return redirect('registration_list')  # Redirect to the list of registrations
+    return render(request, 'delete_registration.html', {'registration': registration})
+

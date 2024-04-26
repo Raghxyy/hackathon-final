@@ -11,6 +11,10 @@ urlpatterns = [
     path("userhome",views.userhome,name="userhome"),
     path("userlogout",views.userlogout,name="userlogout"),
     path("Zodiacsign",views.newproject,name="zodiacsign"),
-    path("spareparts",views.sparepart,name="spareparts"),
     path("checksign", views.checksign, name="checksign"),
-]
+    path('create-reg', views.create_registration, name='create_registration'),
+    path('reg-list', views.registration_list, name='registration_list'),
+    path('update/<int:pk>/', views.update_registration, name='update_registration'),
+    path('delete/<int:pk>/', views.delete_registration, name='delete_registration'),
+
+   ]

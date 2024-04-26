@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Dashboard</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .chart-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Feedback Dashboard</h1>
+
+<!-- Display number of feedbacks -->
+<p>Number of Feedbacks: {{ feedback_count }}</p>
+
+<!-- Display Pie chart for feedback count -->
+<div class="chart-container" id="feedback-pie-chart"></div>
+
+<!-- Display Bar chart for number of feedbacks per user -->
+<div class="chart-container" id="feedback-per-user-bar-chart"></div>
+
+<!-- Display Line chart for feedback submissions over time -->
+<div class="chart-container" id="feedback-over-time-chart"></div>
+
+<script>
+    var feedbackPieData = {{ feedback_pie_json | safe }};
+    feedbackPieData.data[0].marker = {
+        colors: ['#2ecc71', '#3498db', '#e74c3c']  // Customize colors
+    };
+    Plotly.newPlot('feedback-pie-chart', feedbackPieData.data, feedbackPieData.layout);
+
+    var feedbackPerUserBarData = {{ feedback_per_user_bar_json | safe }};
+    feedbackPerUserBarData.data[0].marker = {
+        color: '#9b59b6'  // Customize color
+    };
+    Plotly.newPlot('feedback-per-user-bar-chart', feedbackPerUserBarData.data, feedbackPerUserBarData.layout);
+
+    var feedbackOverTimeData = {{ feedback_over_time_json | safe }};
+    feedbackOverTimeData.data[0].line = {
+        color: '#3498db'  // Customize line color
+    };
+    Plotly.newPlot('feedback-over-time-chart', feedbackOverTimeData.data, feedbackOverTimeData.layout);
+</script>
+
+</body>
+</html>

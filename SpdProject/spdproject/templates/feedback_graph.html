@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Graph</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #feedback-chart {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>Feedback Graph</h2>
+    <div id="feedback-chart"></div>
+
+    <script>
+        var graphJson = JSON.parse('{{ graph_json|escapejs }}');
+        Plotly.newPlot('feedback-chart', graphJson.data, graphJson.layout);
+    </script>
+</body>
+</html>

@@ -12,3 +12,4 @@ class RegistrationForm(forms.ModelForm):
         widgets = {"password":forms.PasswordInput(),"dateofbirth":DateInput()}  # additional features of the fields
         labels = {"gender":"Select Gender","location":"Provide Location"}  #using this, we can change label name in the form
         #exclude = {"gender"}       #using this, we can hide the fields in the form
+
